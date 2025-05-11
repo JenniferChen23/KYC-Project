@@ -38,7 +38,8 @@ and the swagger UI  would runs on port http://127.0.0.1:8000/docs#
 
 ## API Description
 1. Seach Company Info
-目前平台搜尋只支援泰國(th)及新加坡 (sg)
+
+Note: 目前平台搜尋只支援泰國(th)及新加坡 (sg)
 ```
 /api/company-info/{companyName}/{location}
 ```

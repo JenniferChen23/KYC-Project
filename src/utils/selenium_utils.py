@@ -24,6 +24,7 @@ def fetch_sg_company_info(company_name: str) -> dict:
         options = Options()
         options.add_argument("--disable-blink-features=AutomationControlled")
         options.add_argument("--start-maximized")
+        options.add_argument("--headless")
         options.add_argument("--disable-extensions")
         options.add_argument("--disable-gpu")
         options.add_argument("--no-sandbox")

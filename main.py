@@ -3,6 +3,7 @@ from fastapi.responses import JSONResponse
 from src.services.SearchCompany import get_company_info
 from src.services.descriptionAnalysis import predict_startup_success
 from src.config.settings import settings
+from src.schemas.request import Description
 
 app = FastAPI(
     title="Company KYC API",
@@ -22,12 +23,11 @@ async def get_company_info_endpoint(companyName: str, location: str):
         raise HTTPException(status_code=500, detail=f"Server error: {str(e)}")
     
 
-@app.get("/api/company-info/{companyDescription}", summary="Using starup description to identify risk")
-async def company_risk_analysis(companyDescription: str):
+@app.post("/api/company-info/")
+async def company_risk_analysis( payload:Description):
     try:
-        # 呼叫服務層
-        result = predict_startup_success(companyDescription)
-        return JSONResponse(content=result, status_code=200)
+        result = predict_startup_success(payload.companyDescription)
+        return JSONResponse(content={"risk": result}, status_code=200)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=f"Invalid input: {str(e)}")
     except Exception as e:

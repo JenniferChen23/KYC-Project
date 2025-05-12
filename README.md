@@ -4,7 +4,7 @@
 
 ## Project Overview
 1. 爬取泰國及新加坡的公開數據平台來減省人工填表的時間 (不足之資訊輔以 Gemin 蒐集)
-3. 運用文字探勘技術從公司self-description 中判斷風險
+3. (目前正在測試中，已推一個基本版上去)運用文字探勘技術從公司self-description 中判斷風險
 
 
 ## To start the API

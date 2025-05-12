@@ -9,6 +9,13 @@
 
 ## To start the API
 
+Create a .env file under your working directory, adding your google API KEY for Gemini
+
+```
+GOOGLE_API_KEY={your API Key}
+```
+
+
 create venv
 
 ```
